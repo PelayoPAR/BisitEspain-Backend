@@ -12,6 +12,11 @@ const landmarkSchema = new Schema({
     type: String,
     default: "Landmark",
   },
+  // contentFamily: {
+  //   type: Enumerator,
+
+  // }
+  // Province ?
   position: {
     x: String,
     y: String,
