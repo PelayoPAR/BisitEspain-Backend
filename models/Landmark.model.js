@@ -12,14 +12,17 @@ const landmarkSchema = new Schema({
     type: String,
     default: "Landmark",
   },
-  // contentFamily: {
-  //   type: Enumerator,
-
-  // }
-  // Province ?
+  category: {
+    type: String,
+    enum: ["Urban", "Rural", "Coastal"],
+  },
   position: {
-    x: String,
-    y: String,
+    x: Number,
+    y: Number,
+  },
+  URL: {
+    type: String,
+    default: "",
   },
   comments: {
     type: [commentSchema],

@@ -12,8 +12,18 @@ const routeSchema = new Schema({
     type: String,
     default: "Route",
   },
+  category: {
+    type: String,
+    enum: ["Urban", "Rural", "Coastal"],
+  },
   nodes: {
     type: Array,
+    positions: [
+      {
+        x: Number,
+        y: Number,
+      },
+    ],
   },
   comments: {
     type: [commentSchema],

@@ -12,8 +12,12 @@ const provinceSchema = new Schema({
     landmarks: { type: [landmarkSchema], default: [] },
     routes: { type: [routeSchema], default: [] },
   },
+  URL: {
+    type: String,
+    default: "",
+  },
 });
 
 const Province = model("Province", provinceSchema);
 
-module.exports = Province;
+module.exports = { Province, provinceSchema };
