@@ -1,5 +1,5 @@
 const { Schema, model } = require("mongoose");
-// const { userSchema, User } = require("./User.model");
+const { userSchema, User } = require("./User.model");
 
 const commentSchema = new Schema(
   {
@@ -10,6 +10,10 @@ const commentSchema = new Schema(
     message: {
       type: String,
       required: true,
+    },
+    owner: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
     },
   },
   { timestamps: true }

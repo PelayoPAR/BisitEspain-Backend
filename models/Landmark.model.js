@@ -5,9 +5,6 @@ const landmarkSchema = new Schema({
   name: {
     type: String,
   },
-  // description: {
-  // type: String,
-  // }
   contentType: {
     type: String,
     default: "Landmark",
