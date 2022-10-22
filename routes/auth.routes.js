@@ -128,4 +128,17 @@ router.get("/verify", isAuthenticated, (req, res, next) => {
   res.status(200).json(req.payload);
 });
 
+router.delete("/profile/:userId", isAuthenticated, (req, res, next) => {
+  console.log("post reached");
+  User.findByIdAndDelete(req.params.userId)
+    .then(() => {
+      res.status(200).json({
+        message: "Your profile is succesfully deleted. Sorry to see you go.",
+      });
+    })
+    .catch((err) => {
+      console.log("Don't delete what is not yours, very naughty!");
+    });
+});
+
 module.exports = router;
