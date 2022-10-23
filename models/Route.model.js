@@ -20,8 +20,8 @@ const routeSchema = new Schema({
     type: Array,
     positions: [
       {
-        x: Number,
-        y: Number,
+        latitude: Number,
+        longitude: Number,
       },
     ],
   },

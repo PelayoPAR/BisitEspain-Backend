@@ -26,19 +26,19 @@ const seedDB = async () => {
     {
       name: "Catedral",
       category: "Urban",
-      position: { x: 0, y: 0 },
+      position: { latitude: 0, longitude: 0 },
       URL: "https://en.wikipedia.org/wiki/Seville_Cathedral",
     },
     {
       name: "Torre del Oro",
       category: "Urban",
-      position: { x: 0, y: 0 },
+      position: { latitude: 0, longitude: 0 },
       URL: "https://en.wikipedia.org/wiki/Torre_del_Oro",
     },
     {
       name: "Plaza de España",
       category: "Urban",
-      position: { x: 0, y: 0 },
+      position: { latitude: 0, longitude: 0 },
       URL: "https://en.wikipedia.org/wiki/Plaza_de_Espa%C3%B1a,_Seville",
     },
   ]);
@@ -48,9 +48,9 @@ const seedDB = async () => {
       name: "Seville Test Route",
       category: "Urban",
       nodes: [
-        { x: 0, y: 0 },
-        { x: 0, y: 0 },
-        { x: 0, y: 0 },
+        { latitude: 0, longitude: 0 },
+        { latitude: 0, longitude: 0 },
+        { latitude: 0, longitude: 0 },
       ],
     },
   ]);
@@ -61,12 +61,12 @@ const seedDB = async () => {
     {
       name: "Playa de los Genoveses",
       category: "Coastal",
-      position: { x: 0, y: 0 },
+      position: { latitude: 0, longitude: 0 },
     },
     {
       name: "Playa de los Muertos",
       category: "Coastal",
-      position: { x: 0, y: 0 },
+      position: { latitude: 0, longitude: 0 },
     },
   ]);
 
@@ -75,9 +75,9 @@ const seedDB = async () => {
       name: "Almeria Test Route",
       category: "Coastal",
       nodes: [
-        { x: 0, y: 0 },
-        { x: 0, y: 0 },
-        { x: 0, y: 0 },
+        { latitude: 0, longitude: 0 },
+        { latitude: 0, longitude: 0 },
+        { latitude: 0, longitude: 0 },
       ],
     },
   ]);
@@ -88,19 +88,19 @@ const seedDB = async () => {
     {
       name: "Naranjo de Bulnes",
       category: "Rural",
-      position: { x: 0, y: 0 },
+      position: { latitude: 0, longitude: 0 },
       URL: "https://en.wikipedia.org/wiki/Naranjo_de_Bulnes",
     },
     {
       name: "Covadonga Lakes",
       category: "Rural",
-      position: { x: 0, y: 0 },
+      position: { latitude: 0, longitude: 0 },
       URL: "https://en.wikipedia.org/wiki/Lakes_of_Covadonga",
     },
     {
       name: "Garganta del Cares",
       category: "Rural",
-      position: { x: 0, y: 0 },
+      position: { latitude: 0, longitude: 0 },
       URL: "https://en.wikipedia.org/wiki/Cares_Trail",
     },
   ]);
@@ -111,9 +111,9 @@ const seedDB = async () => {
       name: "Ruta del Cares",
       category: "Rural",
       nodes: [
-        { x: 0, y: 0 },
-        { x: 0, y: 0 },
-        { x: 0, y: 0 },
+        { latitude: 0, longitude: 0 },
+        { latitude: 0, longitude: 0 },
+        { latitude: 0, longitude: 0 },
       ],
     },
   ]);
@@ -125,7 +125,11 @@ const seedDB = async () => {
       contents: {
         landmarks: sevilleLandmarks,
         routes: sevilleRoutes,
-        URL: "https://en.wikipedia.org/wiki/Province_of_Seville",
+      },
+      URL: "https://en.wikipedia.org/wiki/Province_of_Seville",
+      center: {
+        latitude: 37.3901,
+        longitude: -5.9947,
       },
     },
     {
@@ -133,7 +137,11 @@ const seedDB = async () => {
       contents: {
         landmarks: almeriaLandmarks,
         routes: almeriaRoutes,
-        URL: "https://en.wikipedia.org/wiki/Province_of_Almer%C3%ADa",
+      },
+      URL: "https://en.wikipedia.org/wiki/Province_of_Almer%C3%ADa",
+      center: {
+        latitude: 36.977570384217664,
+        longitude: -2.1921190582752517,
       },
     },
     {
@@ -141,7 +149,11 @@ const seedDB = async () => {
       contents: {
         landmarks: santanderLandmarks,
         routes: santanderRoutes,
-        URL: "https://en.wikipedia.org/wiki/Cantabria",
+      },
+      URL: "https://en.wikipedia.org/wiki/Cantabria",
+      center: {
+        latitude: 43.21554091477326,
+        longitude: -4.10098748693401,
       },
     },
   ];

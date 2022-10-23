@@ -14,8 +14,8 @@ const landmarkSchema = new Schema({
     enum: ["Urban", "Rural", "Coastal"],
   },
   position: {
-    x: Number,
-    y: Number,
+    latitude: Number,
+    longitude: Number,
   },
   URL: {
     type: String,

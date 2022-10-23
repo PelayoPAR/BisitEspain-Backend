@@ -16,6 +16,10 @@ const provinceSchema = new Schema({
     type: String,
     default: "",
   },
+  center: {
+    latitude: Number,
+    longitude: Number,
+  },
 });
 
 const Province = model("Province", provinceSchema);
