@@ -26,19 +26,19 @@ const seedDB = async () => {
     {
       name: "Catedral",
       category: "Urban",
-      position: { latitude: 0, longitude: 0 },
+      position: { latitude: 37.386016, longitude: -5.993348 },
       URL: "https://en.wikipedia.org/wiki/Seville_Cathedral",
     },
     {
       name: "Torre del Oro",
       category: "Urban",
-      position: { latitude: 0, longitude: 0 },
+      position: { latitude: 37.382447, longitude: -5.996554 },
       URL: "https://en.wikipedia.org/wiki/Torre_del_Oro",
     },
     {
       name: "Plaza de España",
       category: "Urban",
-      position: { latitude: 0, longitude: 0 },
+      position: { latitude: 37.37729, longitude: -5.986878 },
       URL: "https://en.wikipedia.org/wiki/Plaza_de_Espa%C3%B1a,_Seville",
     },
   ]);
