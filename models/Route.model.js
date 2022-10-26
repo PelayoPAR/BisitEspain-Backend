@@ -5,9 +5,6 @@ const routeSchema = new Schema({
   name: {
     type: String,
   },
-  // description: {
-  // type: String,
-  // }
   contentType: {
     type: String,
     default: "Route",
@@ -30,6 +27,18 @@ const routeSchema = new Schema({
     default: [],
   },
 });
+
+// {
+//   type: "Feature",
+//   properties: {},
+//   geometry: {
+//     type: "LineString",
+//     coordinates: [
+//       [-5.993348, 37.386016],
+//       [-5.986878, 37.37729],
+//     ],
+//   },
+// };
 
 const Route = model("Route", routeSchema);
 
