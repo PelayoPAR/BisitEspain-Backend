@@ -28,6 +28,44 @@ const routeSchema = new Schema({
   },
 });
 
+// const routeSchema = new Schema({
+//   type: {
+//     type: String,
+//     enum: ["Feature"],
+//     required: true,
+//   },
+//   properties: {
+//     name: {
+//       type: String,
+//     },
+//     contentType: {
+//       type: String,
+//       default: "Route",
+//     },
+//     category: {
+//       type: String,
+//       enum: ["Urban", "Rural", "Coastal"],
+//     },
+//     comments: {
+//       type: [commentSchema],
+//       default: [],
+//     },
+//   },
+//   geometry: {
+//     type: {
+//       type: String,
+//       enum: ["LineString"],
+//       required: true,
+//     },
+//     coordinates: {
+//       type: [Number],
+//       required: true,
+//     },
+//     // type: "LineString",
+//     // coordinates: [[Number, Number]],
+//   },
+// });
+
 // {
 //   type: "Feature",
 //   properties: {},
