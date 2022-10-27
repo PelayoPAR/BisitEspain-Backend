@@ -192,15 +192,29 @@ const seedDB = async () => {
 
   const almeriaRoutes = await Route.create([
     {
-      name: "Almeria Test Route",
-      category: "Coastal",
-      nodes: [
-        { latitude: 36.95279270224342, longitude: -1.898618720458036 },
-        { latitude: 36.86076969276527, longitude: -2.0064208333557585 },
-        { latitude: 36.74477240126721, longitude: -2.1221465827692327 },
-      ],
+      type: "Feature",
+      properties: { name: "Almeria Test Route", category: "Coastal" },
+      geometry: {
+        type: "LineString",
+        coordinates: [
+          [-1.898618720458036, 36.95279270224342],
+          [-2.0064208333557585, 36.86076969276527],
+          [-2.1221465827692327, 36.74477240126721],
+        ],
+      },
     },
   ]);
+  // const almeriaRoutes = await Route.create([
+  //   {
+  //     name: "Almeria Test Route",
+  //     category: "Coastal",
+  //     nodes: [
+  //       { latitude: 36.95279270224342, longitude: -1.898618720458036 },
+  //       { latitude: 36.86076969276527, longitude: -2.0064208333557585 },
+  //       { latitude: 36.74477240126721, longitude: -2.1221465827692327 },
+  //     ],
+  //   },
+  // ]);
 
   //   console.log(almeriaLandmarks);
 
@@ -228,15 +242,29 @@ const seedDB = async () => {
 
   const asturiasRoutes = await Route.create([
     {
-      name: "Ruta del Cares",
-      category: "Rural",
-      nodes: [
-        { latitude: 43.213300401765764, longitude: -4.905537303433168 },
-        { latitude: 43.24853601425979, longitude: -4.88370792600688 },
-        { latitude: 43.258285717408214, longitude: -4.830832011063734 },
-      ],
+      type: "Feature",
+      properties: { name: "Ruta del Cares", category: "Rural" },
+      geometry: {
+        type: "LineString",
+        coordinates: [
+          [-4.905537303433168, 43.213300401765764],
+          [-4.88370792600688, 43.24853601425979],
+          [-4.830832011063734, 43.258285717408214],
+        ],
+      },
     },
   ]);
+  // const asturiasRoutes = await Route.create([
+  //   {
+  //     name: "Ruta del Cares",
+  //     category: "Rural",
+  //     nodes: [
+  //       { latitude: 43.213300401765764, longitude: -4.905537303433168 },
+  //       { latitude: 43.24853601425979, longitude: -4.88370792600688 },
+  //       { latitude: 43.258285717408214, longitude: -4.830832011063734 },
+  //     ],
+  //   },
+  // ]);
   //   console.log(asturiasRoutes);
 
   const provinces = [
