@@ -2,12 +2,14 @@ const { Schema, model } = require("mongoose");
 
 const commentSchema = new Schema(
   {
-    userEmail: {
-      type: String,
-      default: "mail@default.com",
-    },
     message: {
       type: String,
+      trim: true,
+      required: true,
+    },
+    rating: {
+      type: Number,
+      enum: [0, 1, 2, 3, 4, 5],
       required: true,
     },
     owner: {
