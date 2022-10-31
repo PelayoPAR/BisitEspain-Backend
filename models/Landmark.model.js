@@ -22,7 +22,7 @@ const landmarkSchema = new Schema({
     default: "",
   },
   comments: {
-    type: [commentSchema],
+    type: [{ type: Schema.Types.ObjectId, ref: "Comment" }],
     default: [],
   },
 });

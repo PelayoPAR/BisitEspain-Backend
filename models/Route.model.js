@@ -48,7 +48,7 @@ const routeSchema = new Schema({
       enum: ["Urban", "Rural", "Coastal"],
     },
     comments: {
-      type: [commentSchema],
+      type: [{ type: Schema.Types.ObjectId, ref: "Comment" }],
       default: [],
     },
   },
