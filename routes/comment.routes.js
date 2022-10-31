@@ -26,6 +26,7 @@ commentRouter.post("/create", isAuthenticated, async (req, res) => {
     } else {
       const updatedRoute = Route.findByIdAndUpdate(touristicItemId, {
         $push: { "properties.$.comments": createdComment._id }, // TODO this is not working
+        // perhaps?: properties.comments.push({createdComment._id}) ?
       });
     }
   } catch (err) {
