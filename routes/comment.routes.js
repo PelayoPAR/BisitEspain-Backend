@@ -4,7 +4,6 @@ const { isAuthenticated } = require("../middleware/jwt.middleware.js");
 const { Comment } = require("../models/Comment.model");
 const { Landmark } = require("../models/Landmark.model");
 const { Route } = require("../models/Route.model");
-const { findByIdAndUpdate } = require("../models/User.model.js");
 
 commentRouter.post("/create", isAuthenticated, async (req, res) => {
   const { message, rating, isLandmark, _id: touristicItemId } = req.body;
