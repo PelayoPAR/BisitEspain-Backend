@@ -24,10 +24,14 @@ commentRouter.post("/create", isAuthenticated, async (req, res) => {
       );
       res.json({ updatedLandmark, createdComment }); // To update the comment list in UI
     } else {
-      const updatedRoute = Route.findByIdAndUpdate(touristicItemId, {
-        $push: { "properties.$.comments": createdComment._id }, // TODO this is not working
-        // perhaps?: properties.comments.push({createdComment._id}) ?
-      });
+      const updatedRoute = await Route.findByIdAndUpdate(
+        touristicItemId,
+        {
+          $push: { "properties.comments": createdComment._id },
+        },
+        { new: true }
+      );
+      res.json({ updatedRoute, createdComment });
     }
   } catch (err) {
     console.log("Could not create Comment. Error: ", err);
