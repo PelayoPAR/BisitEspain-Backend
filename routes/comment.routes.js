@@ -5,23 +5,16 @@ const { Comment } = require("../models/Comment.model");
 const { Landmark } = require("../models/Landmark.model");
 const { Route } = require("../models/Route.model");
 
-commentRouter.get("/getComments", (req, res) => {
-  // try {
-  // const commentsArray = await Comment.findById({}).then((comments) => {
-  //   res.json({ comments });
-  //   console.log(comments);
-  // });
-  //get landmark by id
-  return Landmark.find()
-    .populate("comments")
-    .then((landmark) => {
-      res.json({ landmark });
-    });
+commentRouter.post("/getComments", (req, res) => {
+  const { isLandmark, _id } = req.body;
+  console.log(req.body);
+  console.log(_id);
 
-  //find comments by comment id and then populate in the landmark
-  // } catch (e) {
-  //   console.log("Could not read Comments. Error: ", e);
-  // }
+  return Landmark.findById(_id)
+    .populate("comments")
+    .then((resCommentedLandmark) => {
+      res.json({ resCommentedLandmark });
+    });
 });
 
 commentRouter.post("/create", isAuthenticated, async (req, res) => {
