@@ -20,7 +20,7 @@ commentRouter.get("/:touristicItemType/getComments", (req, res) => {
   } else if (touristicItemType === "route") {
     return Route.findById(touristicItemId)
       .populate("properties.comments")
-      .then(({ comments }) => {
+      .then(({ properties: { comments } }) => {
         res.json({ comments })
       })
   } else {
