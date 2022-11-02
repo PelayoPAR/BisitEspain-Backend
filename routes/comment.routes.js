@@ -42,7 +42,8 @@ commentRouter.post("/create", isAuthenticated, async (req, res) => {
         touristicItemId,
         {
           $push: { comments: createdComment._id },
-        }
+        },
+        { new: true }
       )
       res.json({ updatedLandmark, createdComment }) // To update the comment list in UI
     } else {
