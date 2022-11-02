@@ -13,6 +13,7 @@ const { Landmark } = require("../models/Landmark.model");
 const { Province } = require("../models/Province.model");
 const { Route } = require("../models/Route.model");
 const { User } = require("../models/User.model");
+// const rutaDelCaresCoords = require("./coordinates/rutaDelCarescoords");
 
 const seedDB = async () => {
   // Clear previous DB contents:
@@ -105,70 +106,6 @@ const seedDB = async () => {
       },
     },
   ]);
-
-  // const sevilleRoutes = await Route.create([
-  //   {
-  //     name: "Seville Test Route",
-  //     category: "Urban",
-  //     nodes: [
-  //       { latitude: 37.386016, longitude: -5.993348 },
-  //       { latitude: 37.382447, longitude: -5.996554 },
-  //       { latitude: 37.37729, longitude: -5.986878 },
-
-  //       // { latitude: 37.38539, longitude: -5.9939 },
-  //       // { latitude: 37.38483, longitude: -5.99363 },
-  //       // { latitude: 37.38446, longitude: -5.99358 },
-  //       // { latitude: 37.38431, longitude: -5.99356 },
-  //       // { latitude: 37.3841, longitude: -5.99356 },
-  //       // { latitude: 37.384, longitude: -5.99377 },
-  //       // { latitude: 37.38394, longitude: -5.99385 },
-  //       // { latitude: 37.38372, longitude: -5.99403 },
-  //       // { latitude: 37.38364, longitude: -5.9943 },
-  //       // { latitude: 37.3833, longitude: -5.99549 },
-  //       // { latitude: 37.38299, longitude: -5.99641 },
-  //       // { latitude: 37.38312, longitude: -5.99656 },
-  //       // { latitude: 37.38301, longitude: -5.99674 },
-  //       // { latitude: 37.38244, longitude: -5.9962 },
-  //       // { latitude: 37.38209, longitude: -5.99593 },
-  //       // { latitude: 37.3822, longitude: -5.99567 },
-  //       // { latitude: 37.38222, longitude: -5.99568 },
-  //       // { latitude: 37.38228, longitude: -5.99556 },
-  //       // { latitude: 37.38217, longitude: -5.99461 },
-  //       // { latitude: 37.38217, longitude: -5.99453 },
-  //       // { latitude: 37.38219, longitude: -5.99446 },
-  //       // { latitude: 37.38216, longitude: -5.99437 },
-  //       // { latitude: 37.38213, longitude: -5.99433 },
-  //       // { latitude: 37.38212, longitude: -5.99401 },
-  //       // { latitude: 37.38215, longitude: -5.99397 },
-  //       // { latitude: 37.3822, longitude: -5.99393 },
-  //       // { latitude: 37.38217, longitude: -5.99365 },
-  //       // { latitude: 37.38212, longitude: -5.99354 },
-  //       // { latitude: 37.38192, longitude: -5.99339 },
-  //       // { latitude: 37.38184, longitude: -5.99339 },
-  //       // { latitude: 37.38104, longitude: -5.9937 },
-  //       // { latitude: 37.38082, longitude: -5.99282 },
-  //       // { latitude: 37.38075, longitude: -5.99271 },
-  //       // { latitude: 37.38064, longitude: -5.99267 },
-  //       // { latitude: 37.38028, longitude: -5.99263 },
-  //       // { latitude: 37.38015, longitude: -5.99255 },
-  //       // { latitude: 37.38005, longitude: -5.99241 },
-  //       // { latitude: 37.37992, longitude: -5.9919 },
-  //       // { latitude: 37.37945, longitude: -5.99009 },
-  //       // { latitude: 37.3793, longitude: -5.98959 },
-  //       // { latitude: 37.37919, longitude: -5.98959 },
-  //       // { latitude: 37.37913, longitude: -5.98954 },
-  //       // { latitude: 37.37906, longitude: -5.98943 },
-  //       // { latitude: 37.37904, longitude: -5.98933 },
-  //       // { latitude: 37.37904, longitude: -5.98924 },
-  //       // { latitude: 37.37884, longitude: -5.98911 },
-  //       // { latitude: 37.37875, longitude: -5.98907 },
-  //       // { latitude: 37.3788, longitude: -5.98897 },
-  //       // { latitude: 37.37872, longitude: -5.98886 },
-  //       // { latitude: 37.37824, longitude: -5.98857 },
-  //       // { latitude: 37.37706, longitude: -5.98785 },
-  //     ],
-  //   },
-  // ]);
 
   //   console.log(sevilleLandmarks);
 
@@ -300,8 +237,8 @@ const seedDB = async () => {
       },
       URL: "https://en.wikipedia.org/wiki/Cantabria",
       center: {
-        latitude: 43.35857686653735,
-        longitude: -5.8128542691204625,
+        latitude: 43.321916160020756,
+        longitude: -5.489437103582958,
       },
     },
   ];
