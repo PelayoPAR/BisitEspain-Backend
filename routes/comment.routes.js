@@ -50,7 +50,7 @@ commentRouter.get("/:touristicItemType/getComments", (req, res) => {
 
   console.log({ touristicItemId, touristicItemType })
 
-  if (touristicItemType === "landmark") {
+  if (touristicItemType === "Landmark") {
     Landmark.findById(touristicItemId)
       .populate({
         path: "comments",
@@ -65,6 +65,7 @@ commentRouter.get("/:touristicItemType/getComments", (req, res) => {
         res.json({ comments })
       })
   } else if (touristicItemType === "route") {
+    console.log("backend touristycItemType: ", touristicItemType)
     Route.findById(touristicItemId)
       .populate({
         path: "properties.comments",
@@ -75,9 +76,13 @@ commentRouter.get("/:touristicItemType/getComments", (req, res) => {
           select: "-password",
         },
       })
-      .then(({ properties: { comments } }) => {
-        res.json({ comments })
+      .then((data) => {
+        console.log("data: ", data)
+        res.json(data)
       })
+    // .then(({ properties: { comments } }) => {
+    //   res.json({ comments })
+    // })
   } else {
     res.status(400).json({ err: "Touristic Item Type not supported" })
   }
