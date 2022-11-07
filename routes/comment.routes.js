@@ -107,4 +107,25 @@ commentRouter.put("/:commentId", isAuthenticated, async (req, res) => {
   }
 })
 
+commentRouter.delete("/:commentId", isAuthenticated, async (req, res) => {
+  const { commentId } = req.params
+  const { touristicItemId, isLandmark } = req.query
+  try {
+    await Comment.findByIdAndDelete(commentId)
+    if (isLandmark) {
+      await Landmark.findByIdAndUpdate(touristicItemId, {
+        $pull: { comments: commentId },
+      })
+    } else {
+      await Route.findByIdAndUpdate(touristicItemId, {
+        $pull: { "properties.comments": commentId },
+      })
+    }
+    res.status(200).json({ message: "Comment succesfully deleted" })
+  } catch (err) {
+    console.error("Comment delete failed", err)
+    res.status(400).json({ err: "Comment delete failed" })
+  }
+})
+
 module.exports = commentRouter
