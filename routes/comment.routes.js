@@ -48,7 +48,7 @@ commentRouter.get("/:touristicItemType/getComments", (req, res) => {
   const { touristicItemType } = req.params
   const { touristicItemId } = req.query
 
-  console.log({ touristicItemId, touristicItemType })
+  // console.log({ touristicItemId, touristicItemType })
 
   if (touristicItemType === "Landmark") {
     Landmark.findById(touristicItemId)
@@ -65,7 +65,7 @@ commentRouter.get("/:touristicItemType/getComments", (req, res) => {
         res.json({ comments })
       })
   } else if (touristicItemType === "route") {
-    console.log("backend touristycItemType: ", touristicItemType)
+    // console.log("backend touristycItemType: ", touristicItemType)
     Route.findById(touristicItemId)
       .populate({
         path: "properties.comments",
@@ -77,7 +77,7 @@ commentRouter.get("/:touristicItemType/getComments", (req, res) => {
         },
       })
       .then((data) => {
-        console.log("data: ", data)
+        // console.log("data: ", data)
         res.json(data)
       })
     // .then(({ properties: { comments } }) => {

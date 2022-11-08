@@ -1,5 +1,5 @@
-const { Schema, model } = require("mongoose");
-const { commentSchema } = require("./Comment.model");
+const { Schema, model } = require("mongoose")
+const { commentSchema } = require("./Comment.model")
 
 // const routeSchema = new Schema({
 //   name: {
@@ -47,6 +47,10 @@ const routeSchema = new Schema({
       type: String,
       enum: ["Urban", "Rural", "Coastal"],
     },
+    description: {
+      type: String,
+      default: "",
+    },
     comments: {
       type: [{ type: Schema.Types.ObjectId, ref: "Comment" }],
       default: [],
@@ -64,7 +68,7 @@ const routeSchema = new Schema({
       // required: true,
     },
   },
-});
+})
 
 // {
 //   type: "Feature",
@@ -78,6 +82,6 @@ const routeSchema = new Schema({
 //   },
 // };
 
-const Route = model("Route", routeSchema);
+const Route = model("Route", routeSchema)
 
-module.exports = { Route, routeSchema };
+module.exports = { Route, routeSchema }

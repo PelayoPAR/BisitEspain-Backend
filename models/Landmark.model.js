@@ -1,5 +1,5 @@
-const { Schema, model } = require("mongoose");
-const { commentSchema } = require("./Comment.model");
+const { Schema, model } = require("mongoose")
+const { commentSchema } = require("./Comment.model")
 
 const landmarkSchema = new Schema({
   name: {
@@ -21,12 +21,20 @@ const landmarkSchema = new Schema({
     type: String,
     default: "",
   },
+  images: {
+    type: Array,
+    default: [],
+  },
+  description: {
+    type: String,
+    default: "",
+  },
   comments: {
     type: [{ type: Schema.Types.ObjectId, ref: "Comment" }],
     default: [],
   },
-});
+})
 
-const Landmark = model("Landmark", landmarkSchema);
+const Landmark = model("Landmark", landmarkSchema)
 
-module.exports = { Landmark, landmarkSchema };
+module.exports = { Landmark, landmarkSchema }
