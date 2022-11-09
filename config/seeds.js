@@ -1,29 +1,29 @@
 // ℹ️ Gets access to environment variables/settings
 // https://www.npmjs.com/package/dotenv
-require("dotenv").config()
+require("dotenv").config();
 
 // ℹ️ Connects to the database
-require("../db")
+require("../db");
 
 // Allows to close the DB
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 
-const { Comment } = require("../models/Comment.model")
-const { Landmark } = require("../models/Landmark.model")
-const { Province } = require("../models/Province.model")
-const { Route } = require("../models/Route.model")
-const { User } = require("../models/User.model")
-const { rutaDelCaresCoords } = require("./coordinates/rutaDelCaresCoords.jsx")
-const { rutaPlayasCaboGata } = require("./coordinates/rutaPlayasCaboGata.jsx")
-const { rutaSevillaUno } = require("./coordinates/rutaSevillaUno.jsx")
+const { Comment } = require("../models/Comment.model");
+const { Landmark } = require("../models/Landmark.model");
+const { Province } = require("../models/Province.model");
+const { Route } = require("../models/Route.model");
+const { User } = require("../models/User.model");
+const { rutaDelCaresCoords } = require("./coordinates/rutaDelCaresCoords.jsx");
+const { rutaPlayasCaboGata } = require("./coordinates/rutaPlayasCaboGata.jsx");
+const { rutaSevillaUno } = require("./coordinates/rutaSevillaUno.jsx");
 
 const seedDB = async () => {
   // Clear previous DB contents:
   //   console.log(Landmark);
-  await Landmark.deleteMany({})
-  await Route.deleteMany({})
-  await Province.deleteMany({})
-  await Comment.deleteMany({})
+  await Landmark.deleteMany({});
+  await Route.deleteMany({});
+  await Province.deleteMany({});
+  await Comment.deleteMany({});
 
   const sevilleLandmarks = await Landmark.create([
     {
@@ -53,7 +53,7 @@ const seedDB = async () => {
       description:
         "The Plaza de España is a spectacle of light and majesty. was designed by the great Seville architect Aníbal González as an emblematic space for the 1929 Ibero-American Expo. The result was a plaza-palace unique in the world. Its proportions are lavish. Along the entire perimeter of the plaza, there is a canal of 515 metres in length, which you can travel by boat, a truly romantic experience.",
     },
-  ])
+  ]);
 
   const sevilleRoutes = await Route.create([
     {
@@ -70,7 +70,7 @@ const seedDB = async () => {
         coordinates: rutaSevillaUno,
       },
     },
-  ])
+  ]);
 
   const almeriaLandmarks = await Landmark.create([
     {
@@ -100,7 +100,7 @@ const seedDB = async () => {
       description:
         "Though ominously named, 'The Beach of the Dead', situated in Cabo de Gata, is easily one of the most delightful natural paradoxes in Europe. Playa de los Muertos enchants visitors with its Edenic scenery of comfy round pebbles and turquoise waters. It's ominous name comes from the beach being located at a point where natural sea currents converge, causing bodies of shipwrecked mariners to wash ashore. Fortunately, this is a thing of the past.",
     },
-  ])
+  ]);
 
   const almeriaRoutes = await Route.create([
     {
@@ -117,7 +117,7 @@ const seedDB = async () => {
         coordinates: rutaPlayasCaboGata,
       },
     },
-  ])
+  ]);
 
   const asturiasLandmarks = await Landmark.create([
     {
@@ -147,7 +147,7 @@ const seedDB = async () => {
       description:
         "Also known as the 'Divine Gorge', The Cares gorge was created by the river Cares and splits the western and central massifs of the Picos de Europa range.",
     },
-  ])
+  ]);
 
   const asturiasRoutes = await Route.create([
     {
@@ -164,7 +164,7 @@ const seedDB = async () => {
         coordinates: rutaDelCaresCoords,
       },
     },
-  ])
+  ]);
 
   const provinces = [
     {
@@ -203,12 +203,12 @@ const seedDB = async () => {
         longitude: -5.489437103582958,
       },
     },
-  ]
+  ];
 
-  await Province.create(provinces)
-}
+  await Province.create(provinces);
+};
 
 seedDB().then(() => {
-  console.log("Sedding succesful, closing DB connection")
-  mongoose.connection.close()
-})
+  console.log("Seeding succesful, closing DB connection");
+  mongoose.connection.close();
+});
