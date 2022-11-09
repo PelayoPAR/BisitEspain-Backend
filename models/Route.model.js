@@ -55,6 +55,10 @@ const routeSchema = new Schema({
       type: [{ type: Schema.Types.ObjectId, ref: "Comment" }],
       default: [],
     },
+    images: {
+      type: Array,
+      default: [],
+    },
   },
   geometry: {
     type: {
